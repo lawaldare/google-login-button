@@ -1,7 +1,7 @@
 {
   "name": "google-login-button",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Google Login Button",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,7 +12,7 @@
   "unpkg": "dist/google-login-button/google-login-button.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/lawaldare/google-login-button"
   },
   "files": [
     "dist/",
@@ -26,7 +26,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^4.0.0"
+    "@stencil/core": "^4.0.0",
+    "firebase": "^10.3.0"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",

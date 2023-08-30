@@ -5,57 +5,40 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { User } from "firebase/auth";
+export { User } from "firebase/auth";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface GoogleLoginButton {
     }
 }
+export interface GoogleLoginButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGoogleLoginButtonElement;
+}
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLGoogleLoginButtonElement extends Components.GoogleLoginButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLGoogleLoginButtonElement: {
+        prototype: HTMLGoogleLoginButtonElement;
+        new (): HTMLGoogleLoginButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "google-login-button": HTMLGoogleLoginButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface GoogleLoginButton {
+        "onUserEmitted"?: (event: GoogleLoginButtonCustomEvent<User>) => void;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "google-login-button": GoogleLoginButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "google-login-button": LocalJSX.GoogleLoginButton & JSXBase.HTMLAttributes<HTMLGoogleLoginButtonElement>;
         }
     }
 }
