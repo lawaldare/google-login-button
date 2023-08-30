@@ -22,7 +22,7 @@ and also import the script file:
 
 ```bash
   <script type="module"
-    src="./node_modules/google-login-button/dist/stencil-weather-component/stencil-weather-component.esm.js"></script>
+    src="./node_modules/google-login-button/dist/google-login-button/google-login-button.esm.js"></script>
 ```
 
 To use on an Angular application:
